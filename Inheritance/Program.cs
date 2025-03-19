@@ -2,38 +2,81 @@
 
 namespace Inheritance
 {
+    class Animal
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public double Weight { get; set; }
+        public string Habitat { get; set; }
+
+        public void DisplayAnimalInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Age: {Age}, Weight: {Weight}kg, Habitat: {Habitat}");
+        }
+    }
+
+    class Bird : Animal
+    {
+        public double Wingspan { get; set; }
+        public bool CanFly { get; set; }
+        public string BeakType { get; set; }
+        public string FeatherColor { get; set; }
+
+        public void DisplayBirdInfo()
+        {
+            DisplayAnimalInfo();
+            Console.WriteLine($"Wingspan: {Wingspan}m, Can Fly: {CanFly}, Beak Type: {BeakType}, Feather Color: {FeatherColor}\n");
+        }
+    }
+
+    class Reptile : Animal
+    {
+        public bool IsVenomous { get; set; }
+        public string ScaleType { get; set; }
+        public double BodyLength { get; set; }
+        public string ColdBlooded { get; set; }
+
+        public void DisplayReptileInfo()
+        {
+            DisplayAnimalInfo();
+            Console.WriteLine($"Is Venomous: {IsVenomous}, Scale Type: {ScaleType}, Body Length: {BodyLength}m, Cold-Blooded: {ColdBlooded}\n");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            // TODO Be sure to follow best practice when creating your classes
+            Bird parrot = new Bird()
+            {
+                Name = "Rainbow Parrot",
+                Age = 3,
+                Weight = 1.5,
+                Habitat = "Rainnforest",
+                Wingspan = 0.8,
+                CanFly = true,
+                BeakType = "Curved",
+                FeatherColor = "Red, Blue, Yellow"
+            };
 
-            // Create a class Animal
-            // give this class 4 members that all Animals have in common
+            Console.WriteLine("Bird Details:");
+            parrot.DisplayBirdInfo();
 
+            Reptile python = new Reptile()
+            {
+                Name = "Burmese Python",
+                Age = 5,
+                Weight = 35,
+                Habitat = "Swamps and Grassslands",
+                IsVenomous = false,
+                ScaleType = "Smooth",
+                BodyLength = 4.5,
+                ColdBlooded = "Yes"
+            };
 
-            // Create a class Bird
-            // give this class 4 members that are specific to Bird
-            // Set this class to inherit from your Animal Class
-
-            // Create a class Reptile
-            // give this class 4 members that are specific to Reptile
-            // Set this class to inherit from your Animal Class
-
-
-
-
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
-
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
-             */
+            Console.WriteLine("Reptile Details:");
+            python.DisplayReptileInfo();
         }
     }
 }
+
