@@ -2,47 +2,6 @@
 
 namespace Inheritance
 {
-    class Animal
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public double Weight { get; set; }
-        public string Habitat { get; set; }
-
-        public void DisplayAnimalInfo()
-        {
-            Console.WriteLine($"Name: {Name}, Age: {Age}, Weight: {Weight}kg, Habitat: {Habitat}");
-        }
-    }
-
-    class Bird : Animal
-    {
-        public double Wingspan { get; set; }
-        public bool CanFly { get; set; }
-        public string BeakType { get; set; }
-        public string FeatherColor { get; set; }
-
-        public void DisplayBirdInfo()
-        {
-            DisplayAnimalInfo();
-            Console.WriteLine($"Wingspan: {Wingspan}m, Can Fly: {CanFly}, Beak Type: {BeakType}, Feather Color: {FeatherColor}\n");
-        }
-    }
-
-    class Reptile : Animal
-    {
-        public bool IsVenomous { get; set; }
-        public string ScaleType { get; set; }
-        public double BodyLength { get; set; }
-        public string ColdBlooded { get; set; }
-
-        public void DisplayReptileInfo()
-        {
-            DisplayAnimalInfo();
-            Console.WriteLine($"Is Venomous: {IsVenomous}, Scale Type: {ScaleType}, Body Length: {BodyLength}m, Cold-Blooded: {ColdBlooded}\n");
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
